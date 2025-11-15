@@ -48,7 +48,7 @@ Visit [extensions.gnome.org](https://extensions.gnome.org) and search for "Alt-T
 
 ## Compatibility
 
-Compatible with GNOME Shell 46, 47, and 48.
+Compatible with GNOME Shell 46, 47, 48, and 49.
 
 ## Troubleshooting
 

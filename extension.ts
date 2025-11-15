@@ -220,6 +220,12 @@ export default class AltTabCurrentMonitorExtension extends Extension {
 
     const self = this;
     WindowManager.WindowManager.prototype.actionMoveWorkspace = function(workspace) {
+      // Skip custom focus management when in Overview mode
+      if (Main.overview.visible) {
+        self.logDebug('Overview mode detected, using default workspace switching');
+        return self.actionMoveWorkspaceOriginal.apply(this, arguments);
+      }
+      
       // Store current state before workspace switch
       const focusedWindowBefore = global.display.focus_window;
       const currentMonitor = self.getCurrentMonitor();
